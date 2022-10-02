@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import AuthorList from './components/Author.js'
+
 
 class App extends React.Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -10,10 +13,30 @@ class App extends React.Component {
             }
      }
 
+    componentDidMount() {
+        const authors = [
+            {
+                'first_name': 'Fedor',
+                'last_name' : 'Dostoevsky',
+                'birthday_year': 1821
+            },
+            {
+                'first_name': 'Alex',
+                'last_name' : 'Grin',
+                'birthday_year': 1880
+            },
+        ]
+        this.setState(
+            {
+                'authors': authors
+            }
+        )
+    }
+
     render () {
         return (
             <div>
-                Main App
+                <AuthorList authors={this.state.authors} />
             </div>
         )
     }
