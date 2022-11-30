@@ -17,6 +17,7 @@ class Biography(models.Model):
 class Book(models.Model):
     name = models.CharField(max_length=32)
     author = models.ManyToManyField(Author)
+    #author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
 
 #Статья

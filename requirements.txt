@@ -8,3 +8,4 @@ sqlparse==0.4.3
 tzdata==2022.2
 zipp==3.8.1
 django-cors-headers==3.13.0
+django-filter==22.1
