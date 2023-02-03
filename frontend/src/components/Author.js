@@ -24,10 +24,10 @@ const AuthorList = ({authors}) => {
             <th>
                 ID
             </th>
-             <th>
+            <th>
                 First name
             </th>
-             <th>
+            <th>
                 Birthday year
             </th>
             {authors.map((author) => <AuthorItem author={author} />)}
