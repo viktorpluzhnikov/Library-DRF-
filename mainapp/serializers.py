@@ -23,6 +23,7 @@ class BookModelSerializer(ModelSerializer):
 
 
 class ArticleModelSerializer(ModelSerializer):
+    # author = AuthorModelSerializer()
     class Meta:
         model = Article
         fields = '__all__'
