@@ -117,7 +117,7 @@ class App extends React.Component {
                     </nav>
                     <Switch>
                         <Route exact path ='/' component={() => <AuthorList authors={this.state.authors} />} />
-                        <Route exact path ='/Books' component={() => <BookList items={this.state.books} />} />
+                        <Route exact path ='/books' component={() => <BookList items={this.state.books} />} />
                         <Route exact path ='/author/:id' component={() => <AuthorBookList items={this.state.books} />} />
                         <Route exact path ='/login' component={() => <LoginForm get_token={(login, password) => this.get_token(login, password)} />} />
                         <Redirect from ='/authors' to='/'/>

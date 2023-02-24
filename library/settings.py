@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'django_filters',
+    'drf_yasg',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -148,9 +150,14 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-],
-
+    ],
+    #'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
+}
+
+
+GRAPHENE = {
+    'SCHEMA': 'library.schema.schema'
 }
