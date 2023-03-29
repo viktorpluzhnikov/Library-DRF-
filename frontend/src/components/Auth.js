@@ -11,7 +11,7 @@ class LoginForm extends React.Component {
             {
                 [event.target.name]: event.target.value
             }
-        );
+        )
     }
 
     handleSubmit(event) {
@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
                     onChange={(event) => this.handleChange(event)}/>
             <input type="password" name="password" placeholder="password" value={this.state.password}
                     onChange={(event) => this.handleChange(event)}/>
-            <input type="submit" value="login"/>
+            <input type="submit" value="Login"/>
         </form>
         );
     }

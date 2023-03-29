@@ -46,3 +46,4 @@ class ArticleModelViewSet(ModelViewSet):
 #
 #     def get_queryset(self):
 #         return Article.objects.filter(name_contains='Pushkin')
+

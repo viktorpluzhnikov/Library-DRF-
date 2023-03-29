@@ -18,7 +18,7 @@ from django.urls import path, include, re_path
 from rest_framework import permissions
 from rest_framework.routers import DefaultRouter
 from mainapp.views import AuthorModelViewSet, BiographyModelViewSet, BookModelViewSet, ArticleModelViewSet#    ArticleApiView
-from rest_framework.authtoken import views
+from rest_framework.authtoken.views import obtain_auth_token
 from graphene_django.views import GraphQLView
 
 from drf_yasg.views import get_schema_view
@@ -39,14 +39,14 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 router.register('Authors', AuthorModelViewSet)
 router.register('Biography', BiographyModelViewSet)
-router.register('Book', BookModelViewSet)
+router.register('Books', BookModelViewSet)
 router.register('Article', ArticleModelViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     #path('myapi/', ArticleApiView.as_view()),
-    path('api-token-auth/', views.obtain_auth_token),
+    path('api-token-auth/', obtain_auth_token),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
 
