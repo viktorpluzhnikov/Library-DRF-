@@ -12,7 +12,7 @@ import Cookies from 'universal-cookie';
 const NotFound404 = ({ location }) => {
     return (
         <div>
-            <h1>Страница по адресу '{location.pathname}' не найдена</h1>
+            <h1>Страница по адресу `{location.pathname}` не найдена</h1>
         </div>
     )
 }
@@ -81,15 +81,15 @@ class App extends React.Component {
 
     deleteBook(id) {
         const headers = this.get_headers()
-        axios.delete('http//127.0.0.1:8000/api/books/${id}', {headers})
-        .then(response => {
-            this.setState({books: this.state.books.filter((item)=>item.id !== id)})
+        axios.delete(`http://127.0.0.1:8000/api/books/${id}`, {headers})
+            .then(response => {
+                this.setState({books: this.state.books.filter((item)=>item.id !== id)})
             }).catch(error => console.log(error))
     }
 
     load_data() {
         const headers = this.get_headers()
-        axios.get('http://127.0.0.1:8000/api/Authors/', {headers})
+        axios.get('http://127.0.0.1:8000/api/authors/', {headers})
             .then(response => {
                 const authors = response.data
                     this.setState(
@@ -99,7 +99,7 @@ class App extends React.Component {
                 )
             }).catch(error => console.log(error))
 
-        axios.get('http://127.0.0.1:8000/api/Books/', {headers})
+        axios.get('http://127.0.0.1:8000/api/books/', {headers})
             .then(response => {
                 const books = response.data
                     this.setState(
@@ -140,6 +140,7 @@ class App extends React.Component {
                         <Route exact path ='/' component={() => <AuthorList authors={this.state.authors} />} />
                         <Route exact path ='/books' component={() => <BookList items={this.state.books} deleteBook={(id)=>this.deleteBook(id)} />} />
                         <Route exact path ='/author/:id' component={() => <AuthorBookList items={this.state.books} />} />
+                        //<Route path="/author/:id"> <AuthorBookList items={this.state.books} /> </Route>
                         <Route exact path ='/login' component={() => <LoginForm get_token={(login, password) => this.get_token(login, password)} />} />
                         <Redirect from ='/authors' to='/'/>
                         <Route component={NotFound404}/>

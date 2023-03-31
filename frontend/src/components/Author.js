@@ -11,6 +11,9 @@ const AuthorItem = ({author}) => {
                 {author.first_name}
             </td>
             <td>
+                {author.last_name}
+            </td>
+            <td>
                 {author.birthday_year}
             </td>
         </tr>
@@ -26,6 +29,9 @@ const AuthorList = ({authors}) => {
             </th>
             <th>
                 First name
+            </th>
+            <th>
+                Last name
             </th>
             <th>
                 Birthday year

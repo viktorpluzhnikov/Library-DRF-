@@ -37,10 +37,10 @@ schema_view = get_schema_view(
 )
 
 router = DefaultRouter()
-router.register('Authors', AuthorModelViewSet)
-router.register('Biography', BiographyModelViewSet)
-router.register('Books', BookModelViewSet)
-router.register('Article', ArticleModelViewSet)
+router.register('authors', AuthorModelViewSet)
+router.register('biography', BiographyModelViewSet)
+router.register('books', BookModelViewSet)
+router.register('article', ArticleModelViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

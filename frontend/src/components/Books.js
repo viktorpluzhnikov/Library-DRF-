@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 
-const BookItem = ({item, deleteBook}) => {
+const BookItem = ({author, item, deleteBook}) => {
     return (
         <tr>
             <td>
@@ -20,7 +20,7 @@ const BookItem = ({item, deleteBook}) => {
 }
 
 
-const BookList = ({items}) => {
+const BookList = ({items, deleteBook}) => {
     return (
         <div>
         <table>
@@ -34,8 +34,10 @@ const BookList = ({items}) => {
              <th>
                 Author
             </th>
+            <th></th>
             </tr>
-            {items.map((item) => <BookItem item={item} />)}
+            {items.map((item) => <BookItem item={item} deleteBook={deleteBook}/>)}
+
         </table>
         <Link to='/books/create'>Create</Link>
         </div>

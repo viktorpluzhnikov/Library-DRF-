@@ -16,7 +16,7 @@ class AuthorModelViewSet(ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = AuthorModelSerializer
     pagination_class = AuthorPaginator
-    filterset_fields = ['first_name', 'last_name']
+    filterset_fields = ['first_name', 'last_name', 'birthday_year']
 
 
 class BiographyModelViewSet(ModelViewSet):

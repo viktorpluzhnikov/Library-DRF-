@@ -24,19 +24,15 @@ const AuthorBookList = ({items}) => {
     let filtered_items = items.filter((item) => item.author.id == id)
     return (
         <table>
-            <th>
-                Id
-            </th>
-             <th>
-                Name
-            </th>
-             <th>
-                Author
-            </th>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                </tr>
             {filtered_items.map((item) => <BookItem item={item} />)}
         </table>
     )
 }
 
 
-export default AuthorBookList
+export default AuthorBookList;
